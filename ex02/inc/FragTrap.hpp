@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:04 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 07:54:05 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/22 08:22:33 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ class FragTrap: public ClapTrap
 	public:
 	// Constructors
 		FragTrap();
-		FragTrap(const FragTrap &copy);
+		FragTrap(const FragTrap& copy);
 		FragTrap(std::string name);
 
-	// Deconstructors
+	// Destructors
 		virtual ~FragTrap();
 
 	// Overloaded Operators
-		FragTrap &operator=(const FragTrap &src);
+		FragTrap& operator=(const FragTrap& src);
 
 	// Public Methods
 		void highFiveGuys(void);

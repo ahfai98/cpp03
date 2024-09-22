@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:19 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 07:54:20 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/22 08:37:13 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int main()
 {
 	std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		std::cout << "Constructing" << std::endl;
 		ClapTrap a;
 		ClapTrap b("Cody");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << "Testing" << std::endl;
 		a.attack("some other robot");
 		a.takeDamage(10);
 		a.takeDamage(10);
@@ -32,15 +32,15 @@ int main()
 		for (int i = 0; i < 12; i++)
 			b.attack("Cody-clone");
 		b.beRepaired(3);
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		std::cout << "Deconstructing" << std::endl;
 	}
 	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		std::cout << "Constructing" << std::endl;
 		ScavTrap c;
 		ScavTrap d("Savage");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << "Testing" << std::endl;
 		c.attack("CloneTrap");
 		// for (int i = 0; i < 50; i++)
 		// 	c.attack("CloneTrap");
@@ -53,15 +53,15 @@ int main()
 		d.takeDamage(101);
 		d.takeDamage(15);
 		d.attack("ScavTrap-clone");
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		std::cout << "Deconstructing" << std::endl;
 	}
 	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
 	{
-		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		std::cout << "Constructing" << std::endl;
 		FragTrap e;
 		FragTrap f("Chadd");
 
-		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		std::cout << "Testing" << std::endl;
 		e.highFiveGuys();
 		e.attack("some random dude");
 		e.takeDamage(101);
@@ -70,7 +70,7 @@ int main()
 		f.highFiveGuys();
 		// for(int i = 0; i < 101; i++)
 		// 	f.attack("FragTrap-clone");
-		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+		std::cout << "Deconstructing" << std::endl;
 	}
 	return (0);
 }

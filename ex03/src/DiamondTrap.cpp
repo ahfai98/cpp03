@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:55:00 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 07:55:01 by jyap             ###   ########.fr       */
+/*   Updated: 2024/09/22 08:22:33 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ DiamondTrap::DiamondTrap(): ClapTrap("defaultDT_clap_trap")
 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &copy): ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
+DiamondTrap::DiamondTrap(const DiamondTrap& copy): ClapTrap(copy), ScavTrap(copy), FragTrap(copy)
 {
 	*this = copy;
 	std::cout << "DiamondTrap Copy Constructor called" << std::endl;
@@ -39,16 +39,16 @@ DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_trap")
 	std::cout << "DiamondTrap Constructor for the name " << this->_name << " called" << std::endl;
 }
 
-// Deconstructors
+// Destructors
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap Deconstructor for " << this->_name << " called" << std::endl;
+	std::cout << "DiamondTrap Destructor for " << this->_name << " called" << std::endl;
 }
 
 // Overloaded Operators
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& src)
 {
-	std::cout << "DiamondTrap Assignation operator called" << std::endl;
+	std::cout << "DiamondTrap Assignment operator called" << std::endl;
 	this->_name = src._name + "_clap_trap";
 	this->_hit_pts = src._hit_pts;
 	this->_energy_pts = src._energy_pts;
@@ -57,7 +57,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 }
 
 // Public Methods
-void	DiamondTrap::attack(const std::string &target)
+void	DiamondTrap::attack(const std::string& target)
 {
 	ScavTrap::attack(target);
 }

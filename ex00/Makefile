@@ -6,7 +6,7 @@
 #    By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/22 07:48:09 by jyap              #+#    #+#              #
-#    Updated: 2024/09/22 07:48:40 by jyap             ###   ########.fr        #
+#    Updated: 2024/09/22 08:00:52 by jyap             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ_DIR = obj/
 
 INC_DIR = inc/
 
-SRC_FILES	= main.cpp Fixed.cpp
+SRC_FILES	= main.cpp ClapTrap.cpp
 
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
 
