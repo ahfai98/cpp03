@@ -13,7 +13,7 @@
 #include "../inc/ClapTrap.hpp"
 
 // Constructors
-ClapTrap::ClapTrap(): _name("default"), _hit_pts(10), _energy_pts(10), _attack_dmg(0)
+ClapTrap::ClapTrap(): _name("Default"), _hit_pts(10), _energy_pts(10), _attack_dmg(0)
 {
 	std::cout << "ClapTrap Default Constructor called" << std::endl;
 }
@@ -81,7 +81,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		this->_hit_pts += amount;
 		if (this->_hit_pts > 10)
 			this->_hit_pts = 10;
-		std::cout << "ClapTrap " << this->_name << " repaired itself and gained " << amount << " of hit points, he now has " << this->_hit_pts << "hit points." << std::endl;
+		std::cout << "ClapTrap " << this->_name << " repaired itself and gained " << amount << " hit points, he now has " << this->_hit_pts << " hit points." << std::endl;
 		this->_energy_pts--;
 	}
 	else if (this->_hit_pts == 0)

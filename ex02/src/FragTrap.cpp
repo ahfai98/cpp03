@@ -14,7 +14,7 @@
 #include "FragTrap.hpp"
 
 // Constructors
-FragTrap::FragTrap(): ClapTrap()
+FragTrap::FragTrap(): ClapTrap("Default")
 {
 	this->_hit_pts = 100;
 	this->_energy_pts = 100;
@@ -44,19 +44,18 @@ FragTrap::~FragTrap()
 // Overloaded Operators
 FragTrap& FragTrap::operator=(const FragTrap& src)
 {
+	if (this == &src)
+		return (*this);
 	std::cout << "FragTrap Assignment operator called" << std::endl;
-	this->_name = src._name;
-	this->_hit_pts = src._hit_pts;
-	this->_energy_pts = src._energy_pts;
-	this->_attack_dmg = src._attack_dmg;
-	return *this;
+	ClapTrap::operator=(src);
+	return (*this);
 }
 
 // Public Methods
 
 void	FragTrap::highFiveGuys(void)
 {
-	std::cout << "FragTrap " << this->_name << ": You want a high five?\n\t*WHAMM*\nHere you go." << std::endl;
+	std::cout << "FragTrap " << this->_name << ": You want a high five? Ok.\n" << std::endl;
 }
 
 // Getter

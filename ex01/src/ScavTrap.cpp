@@ -14,27 +14,24 @@
 #include "ScavTrap.hpp"
 
 // Constructors
-ScavTrap::ScavTrap(): ClapTrap()
+ScavTrap::ScavTrap(): ClapTrap("Default"), _guarding_gate(false)
 {
 	this->_hit_pts = 100;
 	this->_energy_pts = 50;
 	this->_attack_dmg = 20;
-	this->_guarding_gate = false;
 	std::cout << "ScavTrap Default Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap(copy)
+ScavTrap::ScavTrap(const ScavTrap& copy): ClapTrap(copy), _guarding_gate(copy._guarding_gate)
 {
-	this->_guarding_gate = copy._guarding_gate;
 	std::cout << "ScavTrap Copy Constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string name): ClapTrap(name), _guarding_gate(false)
 {
 	this->_hit_pts = 100;
 	this->_energy_pts = 50;
 	this->_attack_dmg = 20;
-	this->_guarding_gate = false;
 	std::cout << "ScavTrap Constructor for the name " << this->_name << " called" << std::endl;
 }
 
@@ -47,12 +44,12 @@ ScavTrap::~ScavTrap()
 // Overloaded Operators
 ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 {
+	if (this == &src)
+		return (*this);
 	std::cout << "ScavTrap Assignment operator called" << std::endl;
-	this->_name = src._name;
-	this->_hit_pts = src._hit_pts;
-	this->_energy_pts = src._energy_pts;
-	this->_attack_dmg = src._attack_dmg;
-	return *this;
+	ClapTrap::operator=(src);
+	this->_guarding_gate = src._guarding_gate;
+	return (*this);
 }
 
 // Public Methods
