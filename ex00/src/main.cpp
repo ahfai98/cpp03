@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:19 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 08:51:02 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 21:36:58 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ int main()
 	b.beRepaired(3);
 	for (int i = 0; i < 12; i++)
 	{
-		b.attack("default");
+		b.attack("Default");
 		a.takeDamage(0);
 	}
 	b.beRepaired(3);
+	c.attack("Default");
+	a.takeDamage(0);
 	std::cout << std::endl;
 	return (0);
 }

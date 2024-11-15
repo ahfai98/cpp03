@@ -6,13 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:43 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 08:37:13 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 21:35:26 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// #include "../inc/ScavTrap.hpp"
-#include "ScavTrap.hpp"
+#include "../inc/ScavTrap.hpp"
 
 int main()
 {

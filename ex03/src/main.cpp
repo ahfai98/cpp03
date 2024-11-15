@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:55:09 by jyap              #+#    #+#             */
-/*   Updated: 2024/09/22 08:37:13 by jyap             ###   ########.fr       */
+/*   Updated: 2024/11/15 23:12:10 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,21 @@ int main()
 	{
 		std::cout << "Constructing" << std::endl;
 		DiamondTrap a;
-		DiamondTrap b("Giga Chadd");
+		DiamondTrap b("TestDT");
 		DiamondTrap c(a);
 
 		std::cout << "Testing" << std::endl;
 		a.whoAmI();
-		a.attack("some super random dude");
+		a.attack("some random dude");
 		b.whoAmI();
-		b.attack("Chadd-clone");
+		b.attack("TestDT-clone");
 		c.whoAmI();
+		a.guardGate();
+		a.highFiveGuys();
+		b.guardGate();
+		b.whoAmI();
+		b.guardGate();
+		b.whoAmI();
 		std::cout << "Deconstructing" << std::endl;
 	}
 	return (0);
