@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:52:42 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 21:39:19 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/06 15:26:16 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,13 @@ ClapTrap::~ClapTrap()
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
 	std::cout << "(ClapTrap)Assignment operator called." << std::endl;
-	this->_name = src._name;
-	this->_hit_pts = src._hit_pts;
-	this->_energy_pts = src._energy_pts;
-	this->_attack_dmg = src._attack_dmg;
+	if (this != &src)
+	{
+		this->_name = src._name;
+		this->_hit_pts = src._hit_pts;
+		this->_energy_pts = src._energy_pts;
+		this->_attack_dmg = src._attack_dmg;
+	}
 	return (*this);
 }
 
@@ -82,9 +85,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->_energy_pts > 0 && this->_hit_pts > 0)
 	{
+		if (amount > 10 - this->_hit_pts)
+			amount = 10 - this->_hit_pts;
 		this->_hit_pts += amount;
-		if (this->_hit_pts > 10)
-			this->_hit_pts = 10;
 		std::cout << "ClapTrap " << this->_name << " repaired itself and gained " << amount << " hit points, it now has " << this->_hit_pts << " hit points." << std::endl;
 		this->_energy_pts--;
 		std::cout << "<Energy Left :" << this->_energy_pts << ">" << std::endl;

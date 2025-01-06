@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:59 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 22:03:16 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:02:13 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class ClapTrap
 		ClapTrap &operator=(const ClapTrap &src);
 
 	// Public Methods
-		void attack(const std::string &target);
+		virtual void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
