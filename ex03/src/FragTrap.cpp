@@ -6,14 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:15 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 22:49:10 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:54:28 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-
-unsigned int FragTrap::_hit_pts = 100;
-unsigned int FragTrap::_attack_dmg = 30;
 
 // Constructors
 FragTrap::FragTrap(): ClapTrap("Default")

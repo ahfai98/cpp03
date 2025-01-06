@@ -6,13 +6,11 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:47 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 22:49:39 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:55:04 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-
-unsigned int ScavTrap::_energy_pts = 50;
 
 // Constructors
 ScavTrap::ScavTrap(): ClapTrap("Default"), _guarding_gate(false)
