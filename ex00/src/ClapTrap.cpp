@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:52:42 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/06 15:26:16 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:25:11 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << "ClapTrap " << this->_name << " is already dead, stop beating it." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap " << this->_name << " was attacked and lost " << amount << " hit points, it now has " << this->_hit_pts << " hit points." << std::endl;
+	std::cout << "ClapTrap " << this->_name << " lost " << amount << " hit points, it now has " << this->_hit_pts << " hit points." << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)

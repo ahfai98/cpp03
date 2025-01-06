@@ -6,15 +6,14 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:15 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 22:02:59 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/06 17:19:53 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "FragTrap.hpp"
 
 // Constructors
-FragTrap::FragTrap(): ClapTrap("Default")
+FragTrap::FragTrap(): ClapTrap()
 {
 	this->_hit_pts = 100;
 	this->_energy_pts = 100;
@@ -55,7 +54,7 @@ FragTrap &FragTrap::operator=(const FragTrap &src)
 
 void	FragTrap::highFiveGuys(void)
 {
-	std::cout << "FragTrap " << this->_name << ": You want a high five? Ok.\n" << std::endl;
+	std::cout << "FragTrap " << this->_name << ": I want High Fives." << std::endl;
 }
 
 
