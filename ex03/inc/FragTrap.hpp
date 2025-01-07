@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:43 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/06 17:53:56 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/07 15:55:36 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class FragTrap: virtual public ClapTrap
 	// Overloaded Operators
 		FragTrap &operator=(const FragTrap &src);
 
-	unsigned int _attack_dmg;
-	unsigned int _hit_pts;
 	// Public Methods
 		void highFiveGuys(void);
 	

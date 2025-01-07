@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:47 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/06 17:55:04 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/07 16:02:32 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ ScavTrap::ScavTrap(): ClapTrap("Default"), _guarding_gate(false)
 	std::cout << "ScavTrap Default Constructor called." << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy), _guarding_gate(copy._guarding_gate)
+ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy)
 {
 	std::cout << "ScavTrap Copy Constructor called." << std::endl;
+	*this = copy;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name), _guarding_gate(false)
@@ -43,11 +44,15 @@ ScavTrap::~ScavTrap()
 // Overloaded Operators
 ScavTrap &ScavTrap::operator=(const ScavTrap &src)
 {
-	if (this == &src)
-		return (*this);
-	std::cout << "ScavTrap Assignment operator called." << std::endl;
-	ClapTrap::operator=(src);
-	this->_guarding_gate = src._guarding_gate;
+	if (this != &src)
+	{
+		std::cout << "ScavTrap Assignment operator called." << std::endl;
+		this->_name = src._name;
+		this->_attack_dmg = src._attack_dmg;
+		this->_hit_pts = src._hit_pts;
+		this->_energy_pts = src._energy_pts;
+		this->_guarding_gate = src._guarding_gate;
+	}
 	return (*this);
 }
 

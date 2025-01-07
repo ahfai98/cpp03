@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:48 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/06 17:55:10 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/07 15:55:41 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ class ScavTrap: virtual public ClapTrap
 	// Overloaded Operators
 		ScavTrap &operator=(const ScavTrap &src);
 
-		unsigned int _energy_pts;
-
 	// Public Methods
-		void attack(const std::string &target);
+		virtual void attack(const std::string &target);
 		void guardGate(void);
 };
 

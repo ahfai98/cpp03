@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:39 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/06 17:25:11 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/07 15:53:54 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,14 @@ ClapTrap::~ClapTrap()
 // Overloaded Operators
 ClapTrap &ClapTrap::operator=(const ClapTrap &src)
 {
-	std::cout << "ClapTrap Assignment operator called." << std::endl;
-	this->_name = src._name;
-	this->_hit_pts = src._hit_pts;
-	this->_energy_pts = src._energy_pts;
-	this->_attack_dmg = src._attack_dmg;
+	if (this != &src)
+	{
+		std::cout << "ClapTrap Assignment operator called." << std::endl;
+		this->_name = src._name;
+		this->_hit_pts = src._hit_pts;
+		this->_energy_pts = src._energy_pts;
+		this->_attack_dmg = src._attack_dmg;
+	}
 	return (*this);
 }
 
