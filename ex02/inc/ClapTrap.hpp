@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:59 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/06 17:02:13 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/10 12:28:10 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ class ClapTrap
 {
 	protected:
 		std::string _name;
-		unsigned int _hit_pts;
-		unsigned int _energy_pts;
-		unsigned int _attack_dmg;
+		unsigned int _hp;
+		unsigned int _energy;
+		unsigned int _attack_damage;
 
 	public:
 	// Constructors
@@ -30,7 +30,7 @@ class ClapTrap
 		ClapTrap(const ClapTrap &copy);
 		ClapTrap(std::string name);
 
-	// Destructors
+	
 		virtual ~ClapTrap();
 
 	// Overloaded Operators
@@ -40,6 +40,7 @@ class ClapTrap
 		virtual void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+		void setName(const std::string &name);
 };
 
 #endif

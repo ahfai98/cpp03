@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:54:39 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 22:18:19 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/10 14:03:33 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		DiamondTrap();
 		DiamondTrap(const DiamondTrap &copy);
 		DiamondTrap(std::string name);
-
-	// Destructors
 		~DiamondTrap();
 
 	// Overloaded Operators

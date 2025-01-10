@@ -6,7 +6,7 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:53:35 by jyap              #+#    #+#             */
-/*   Updated: 2024/11/15 22:07:15 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/10 12:29:32 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ class ScavTrap: public ClapTrap
 		ScavTrap();
 		ScavTrap(const ScavTrap &copy);
 		ScavTrap(std::string name);
-
-	// Destructors
 		~ScavTrap();
 
 	// Overloaded Operators

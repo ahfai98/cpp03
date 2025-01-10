@@ -6,42 +6,40 @@
 /*   By: jyap <jyap@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:55:00 by jyap              #+#    #+#             */
-/*   Updated: 2025/01/07 16:05:58 by jyap             ###   ########.fr       */
+/*   Updated: 2025/01/10 14:14:15 by jyap             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/DiamondTrap.hpp"
 
 // Constructors
-DiamondTrap::DiamondTrap(): ClapTrap("Default_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(): ClapTrap("Default_clap_name")
 {
-	this->_name = "Default";
-	this->_hit_pts = FragTrap::_hit_pts;
-	this->_energy_pts = ScavTrap::_energy_pts;
-	this->_attack_dmg = FragTrap::_attack_dmg;
-	this->_guarding_gate = false;
-	std::cout << "DiamondTrap Default Constructor called." << std::endl;
+	this->_name = "DefaultDT";
+	std::cout << "(DiamondTrap)Default Constructor called." << std::endl;
+	this->_hp = FragTrap::FRAG_HP;
+	this->_energy = ScavTrap::SCAV_ENERGY;
+	this->_attack_damage = FragTrap::FRAG_DMG;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &copy): ClapTrap(copy), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(const DiamondTrap &copy): ClapTrap(copy)
 {
+	std::cout << "(DiamondTrap)Copy Constructor called." << std::endl;
 	*this = copy;
-	std::cout << "DiamondTrap Copy Constructor called." << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name")
 {
 	this->_name = name;
-	this->_hit_pts = FragTrap::_hit_pts;
-	this->_energy_pts = ScavTrap::_energy_pts;
-	this->_attack_dmg = FragTrap::_attack_dmg;
-	std::cout << "DiamondTrap Constructor for " << this->_name << " called." << std::endl;
+	this->_hp = FragTrap::FRAG_HP;
+	this->_energy = ScavTrap::SCAV_ENERGY;
+	this->_attack_damage = FragTrap::FRAG_DMG;
+	std::cout << "(DiamondTrap)Constructor for " << this->_name << " called." << std::endl;
 }
 
-// Destructors
 DiamondTrap::~DiamondTrap()
 {
-	std::cout << "DiamondTrap Destructor for " << this->_name << " called." << std::endl;
+	std::cout << "(DiamondTrap)Destructor for " << this->_name << " called." << std::endl;
 }
 
 // Overloaded Operators
@@ -49,17 +47,16 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &src)
 {
 	if (this != &src)
 	{
-		std::cout << "DiamondTrap Assignment operator called." << std::endl;
+		std::cout << "(DiamondTrap)Assignment operator called." << std::endl;
 		this->_guarding_gate = src._guarding_gate;
 		this->_name = src._name;
-		this->_hit_pts = src._hit_pts;
-		this->_energy_pts = src._energy_pts;
-		this->_attack_dmg = src._attack_dmg;
+		this->_hp = src._hp;
+		this->_energy = src._energy;
+		this->_attack_damage = src._attack_damage;
 	}
 	return (*this);
 }
 
-// Public Methods
 void	DiamondTrap::attack(const std::string &target)
 {
 	ScavTrap::attack(target);
@@ -67,12 +64,15 @@ void	DiamondTrap::attack(const std::string &target)
 
 void	DiamondTrap::whoAmI(void)
 {
-	std::cout << "Hello I am a DiamondTrap named " << this->_name <<
+	std::cout << "I am a DiamondTrap named " << this->_name <<
 	" and I originated from the ClapTrap named " << ClapTrap::_name << "." << std::endl;
-	std::cout << "HP\t\t:" << this->_hit_pts << std::endl;
-	std::cout << "Energy\t\t:" << this->_energy_pts << std::endl;
-	std::cout << "Attack Damage\t:" << this->_attack_dmg << std::endl;
-	this->guardGate();
-	this->guardGate();
-	this->highFiveGuys();
+	std::cout << "HP\t\t:" << _hp << std::endl;
+	std::cout << "Energy\t\t:" << _energy << std::endl;
+	std::cout << "Attack Damage\t:" << _attack_damage << std::endl;
+	const ClapTrap* scavTrapClapPtr = ScavTrap::getClapTrapAddress();
+    const ClapTrap* fragTrapClapPtr = FragTrap::getClapTrapAddress();
+	if (scavTrapClapPtr == fragTrapClapPtr)
+        std::cout << "Both ScavTrap and FragTrap share the same ClapTrap address!" << std::endl;
+    else
+        std::cout << "ScavTrap and FragTrap have different ClapTrap addresses!" << std::endl;
 }
